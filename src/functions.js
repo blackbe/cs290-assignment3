@@ -13,7 +13,10 @@
 */
 
 //your code here
-
+function uselessFunction() {
+  var useless = null;
+  return useless;
+}
 //end your code
 
 var bar = 'not a function';
@@ -30,7 +33,18 @@ var barType = typeof bar;
 */
 
 //your code here
+bar = function(doubleArray) { 
+  for (var i = 0; i < doubleArray.length; i++) {
+		if(typeof doubleArray[i] != "number") {
+			return false;
+		}
+		else {
+			doubleArray[i] *= 2;
+		}
 
+	}
+  return true; 
+}
 //end your code
 
 /**
@@ -60,11 +74,24 @@ function GitLog(hash, date, message) {
 *
 *
 * @param {array.<string>} logArray - an array of Git commit messages of the
-* above
-* format.
+* above format.
 * @return {array.<GitLog>} - return an array GitLog instances
 */
 
 //your code here
+function parseGit(logArray) {
+	var objectToInspect;     
+	var result = {};
+	
+	for (var i = 0; i < logArray.length; i++) {
+		result[i] = {};
+		result[i].hash = logArray[i].split(' ')[0];
+		result[i].date = logArray[i].split(' ')[1] + " " + logArray[i].split(' ')[2] + " " + logArray[i].split(' ')[3] + " " + logArray[i].split(' ')[4] + " " + logArray[i].split(' ')[5] + " " + logArray[i].split(' ')[6] + " ";
+		result[i].message = logArray[i].match(/"(?:[^"\\]|\\.)*"/);
+	}
+	
+	return result;
+}
+
 
 //end your code
