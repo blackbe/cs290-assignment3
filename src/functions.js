@@ -81,17 +81,13 @@ function GitLog(hash, date, message) {
 //your code here
 function parseGit(logArray) {
 	var objectToInspect;     
-	var result = {};
-	
-	for (var i = 0; i < logArray.length; i++) {
-		result[i] = {};
-		result[i].hash = logArray[i].split(' ')[0];
-		result[i].date = logArray[i].split(' ')[1] + " " + logArray[i].split(' ')[2] + " " + logArray[i].split(' ')[3] + " " + logArray[i].split(' ')[4] + " " + logArray[i].split(' ')[5] + " " + logArray[i].split(' ')[6] + " ";
-		result[i].message = logArray[i].match(/"(?:[^"\\]|\\.)*"/);
-	}
-	
-	return result;
+	var array = {};
+		for (var i = 0; i < logArray.length; i++) {
+			array[i] = {};
+			array[i].hash = logArray[i].split(' ')[0];
+			array[i].date = logArray[i].split(' ')[1] + " " + logArray[i].split(' ')[2] + " " + logArray[i].split(' ')[3] + " " + logArray[i].split(' ')[4] + " " + logArray[i].split(' ')[5] + " " + logArray[i].split(' ')[6] + " " + logArray[i].split(' ')[7];
+			array[i].message = logArray[i].match(/"(?:[^"\\]|\\.)*"/);
+		}
+	return array;
 }
-
-
 //end your code

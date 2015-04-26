@@ -10,7 +10,7 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  return object = {type: "Goldfish", brand: "Pepperidge Farm", flavor: "Cheddar", count: 2000}; //Modify ONLY this line
   //end your code
 }
 
@@ -38,7 +38,34 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+function MessageLog(user){
+	this.user;
+	this.sentMessages = [];
+	this.receivedCount = 0;
+	this.sentCount = 0;
+  this.receivedMessages = [];
+	this.logMessage = function(messageText,direction) {
+		if (direction == 0){
+			console.log("sent")
+		}
+		if (direction == 1){
+			console.log("received")
+		}
+	};
+	this.getSentMessage = function(n){ /*returns as a string, the content of the nth most
+* recently sent message. To conserve memory, the object should only keep the
+* last 5 message. n=0 retrieves the most recent n=4 retrieves the least recent
+* of the 5.*/
+		
+		return n;
+	};
+	this.totalSent = function(){
+		return this.sentCount += 1;
+	};
+	this.totalReceived = function(){
+		return this.receivedCount += 1;
+	};
+}
 //end your code
 
 /**
@@ -47,6 +74,10 @@ function returnObjectLiteral() {
 * received.
 */
 //your code here
+MessageLog.prototype.lastReceivedMessage = function() {
+	return this.receivedMessages;
+};
+
 
 //end your code
 
@@ -57,5 +88,6 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+var myLog = new MessageLog("BlackHatGuy");
+myLog.receivedMessages = ["foo","bar","baz"]
 //end your code
