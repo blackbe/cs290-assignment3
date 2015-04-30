@@ -3,7 +3,7 @@
 		<head>
 			<meta charset="UTF-8">
 			<title>cs290-assignment3</title>
-			<script scr ='cs290-assignment3.js'></script>
+			<script src='src/cs290-assignment3.js'></script>
 		</head>
 		<body>
 			<div id="display"></div>
@@ -13,8 +13,15 @@
 					<input type="radio" name="Language" id="selJSON" value="JSON"> JSON 
 					<input type="radio" name="Language" id="selPython" value="Python"> Python 
 					<input type="text" name="pages" id="pages-input">
-				<input type="button" name="fetch" id="gistList" onclick="fetchData()" value="Fetch Gists">			
-			
-			
+					<input type="button" name="fetch" onclick="fetchData()" value="Fetch Gists">
+				</form>	
+				<div>
+					<h1>Gist List</h1>
+					<ul id="gistList"></ul>
+				</div>
+				<div>
+					<h1>Gist Favorites</h1>
+					<ul id="gistFavs"></ul>
+				</div>
 		</body>
 	</html>
